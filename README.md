@@ -17,12 +17,13 @@ Real-time webcam filter controlled by hand gestures. Uses **MediaPipe** hand tra
 | 4 | Cartoon |
 | 5 | Invert |
 
-## Requirements
+## Quick Start (Windows EXE)
 
-- Python 3.10+
-- Webcam
+Download `FingerFilters.exe` from the [Releases](https://github.com/Polarzen/finger-filters/releases) page (or `dist/FingerFilters.exe`). Double-click to run. No Python or setup required — just a webcam.
 
-## Setup
+Press **Q** to quit.
+
+## Setup (Python)
 
 ```bash
 # Clone the repo
@@ -36,14 +37,6 @@ venv\Scripts\activate     # Windows
 
 # Install dependencies
 pip install -r requirements.txt
-```
-
-## Model file
-
-The `hand_landmarker.task` model file is included in this repo. If you need a fresh copy, download it from:
-
-```
-https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task
 ```
 
 ## Usage

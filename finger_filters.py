@@ -4,6 +4,8 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from mediapipe import Image, ImageFormat
 import numpy as np
+import sys
+import os
 
 FINGER_TIPS = [4, 8, 12, 16, 20]  # thumb, index, middle, ring, pinky
 
@@ -91,8 +93,9 @@ def main():
         print("Error: Cannot open camera.")
         return
 
+    model_path = os.path.join(sys._MEIPASS, "hand_landmarker.task") if getattr(sys, 'frozen', False) else "hand_landmarker.task"
     options = vision.HandLandmarkerOptions(
-        base_options=python.BaseOptions(model_asset_path="hand_landmarker.task"),
+        base_options=python.BaseOptions(model_asset_path=model_path),
         running_mode=vision.RunningMode.IMAGE,
         num_hands=2,
         min_hand_detection_confidence=0.7,
